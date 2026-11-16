@@ -1,0 +1,302 @@
+{
+  "cli_stdout": "{\n  \"contract_version\": 1,\n  \"project\": \"assessment-score-equating\",\n  \"rounding\": \"HALF_UP@0.01\",\n  \"scores\": [\n    {\n      \"absent\": 0,\n      \"attempted\": 1,\n      \"form\": \"F1\",\n      \"raw\": 1,\n      \"scale\": 10.0,\n      \"scale_hundredths\": 1000,\n      \"student\": \"S1\",\n      \"violations\": 0\n    },\n    {\n      \"absent\": 0,\n      \"attempted\": 1,\n      \"form\": \"F2\",\n      \"raw\": 0,\n      \"scale\": 0.0,\n      \"scale_hundredths\": 0,\n      \"student\": \"S2\",\n      \"violations\": 0\n    }\n  ],\n  \"status\": \"ok\",\n  \"void_items\": [\n    \"Q2\"\n  ]\n}\n",
+  "contract_errors": [
+    {
+      "message": "input must be a JSON object",
+      "name": "not_an_object",
+      "raised": "ValueError"
+    },
+    {
+      "message": "responses must be a list",
+      "name": "responses_not_list",
+      "raised": "ValueError"
+    },
+    {
+      "message": "responses[0] must be an object",
+      "name": "response_not_object",
+      "raised": "ValueError"
+    },
+    {
+      "message": "responses[0] is missing field 'student'",
+      "name": "missing_student",
+      "raised": "ValueError"
+    },
+    {
+      "message": "responses[0].item must be a non-empty string",
+      "name": "empty_item",
+      "raised": "ValueError"
+    },
+    {
+      "message": "responses[0] is missing field 'answer'",
+      "name": "missing_answer",
+      "raised": "ValueError"
+    },
+    {
+      "message": "responses[0].answer must be a string",
+      "name": "answer_not_string",
+      "raised": "ValueError"
+    },
+    {
+      "message": "responses[0].status must be one of: absent, present, violation",
+      "name": "bad_status",
+      "raised": "ValueError"
+    },
+    {
+      "message": "keys must be an object",
+      "name": "keys_not_object",
+      "raised": "ValueError"
+    },
+    {
+      "message": "void_items must be a list",
+      "name": "void_items_not_list",
+      "raised": "ValueError"
+    },
+    {
+      "message": "void_items[0] must be a non-empty string",
+      "name": "void_item_not_string",
+      "raised": "ValueError"
+    },
+    {
+      "message": "scale must be an object",
+      "name": "scale_not_object",
+      "raised": "ValueError"
+    },
+    {
+      "message": "scale['F1'] must be a number",
+      "name": "scale_not_number",
+      "raised": "ValueError"
+    },
+    {
+      "message": "scale['F1'] must be a number",
+      "name": "scale_bool",
+      "raised": "ValueError"
+    }
+  ],
+  "description": "Pinned release expectations. Editing this file is a contract change: bump CONTRACT_VERSION and explain why.",
+  "outputs": {
+    "absent_and_violation": {
+      "contract_version": 1,
+      "project": "assessment-score-equating",
+      "rounding": "HALF_UP@0.01",
+      "scores": [
+        {
+          "absent": 1,
+          "attempted": 2,
+          "form": "F1",
+          "raw": 2,
+          "scale": 20.0,
+          "scale_hundredths": 2000,
+          "student": "S1",
+          "violations": 1
+        }
+      ],
+      "status": "ok",
+      "void_items": []
+    },
+    "all_items_void": {
+      "contract_version": 1,
+      "project": "assessment-score-equating",
+      "rounding": "HALF_UP@0.01",
+      "scores": [],
+      "status": "ok",
+      "void_items": [
+        "Q1",
+        "Q9"
+      ]
+    },
+    "default_scale_and_ordering": {
+      "contract_version": 1,
+      "project": "assessment-score-equating",
+      "rounding": "HALF_UP@0.01",
+      "scores": [
+        {
+          "absent": 0,
+          "attempted": 1,
+          "form": "F1",
+          "raw": 1,
+          "scale": 10.0,
+          "scale_hundredths": 1000,
+          "student": "S1",
+          "violations": 0
+        },
+        {
+          "absent": 0,
+          "attempted": 1,
+          "form": "F10",
+          "raw": 1,
+          "scale": 10.0,
+          "scale_hundredths": 1000,
+          "student": "S1",
+          "violations": 0
+        },
+        {
+          "absent": 0,
+          "attempted": 1,
+          "form": "F2",
+          "raw": 1,
+          "scale": 10.0,
+          "scale_hundredths": 1000,
+          "student": "S1",
+          "violations": 0
+        },
+        {
+          "absent": 0,
+          "attempted": 1,
+          "form": "F9",
+          "raw": 1,
+          "scale": 10.0,
+          "scale_hundredths": 1000,
+          "student": "S2",
+          "violations": 0
+        }
+      ],
+      "status": "ok",
+      "void_items": []
+    },
+    "empty_input": {
+      "contract_version": 1,
+      "project": "assessment-score-equating",
+      "rounding": "HALF_UP@0.01",
+      "scores": [],
+      "status": "ok",
+      "void_items": []
+    },
+    "empty_payload": {
+      "contract_version": 1,
+      "project": "assessment-score-equating",
+      "rounding": "HALF_UP@0.01",
+      "scores": [],
+      "status": "ok",
+      "void_items": []
+    },
+    "finite_scale_precision": {
+      "contract_version": 1,
+      "project": "assessment-score-equating",
+      "rounding": "HALF_UP@0.01",
+      "scores": [
+        {
+          "absent": 0,
+          "attempted": 3,
+          "form": "F1",
+          "raw": 3,
+          "scale": 3.02,
+          "scale_hundredths": 302,
+          "student": "S1",
+          "violations": 0
+        }
+      ],
+      "status": "ok",
+      "void_items": []
+    },
+    "half_up_rounding": {
+      "contract_version": 1,
+      "project": "assessment-score-equating",
+      "rounding": "HALF_UP@0.01",
+      "scores": [
+        {
+          "absent": 0,
+          "attempted": 1,
+          "form": "F1",
+          "raw": 1,
+          "scale": 0.15,
+          "scale_hundredths": 15,
+          "student": "S1",
+          "violations": 0
+        },
+        {
+          "absent": 0,
+          "attempted": 1,
+          "form": "F1",
+          "raw": 0,
+          "scale": 0.0,
+          "scale_hundredths": 0,
+          "student": "S2",
+          "violations": 0
+        },
+        {
+          "absent": 0,
+          "attempted": 1,
+          "form": "F1",
+          "raw": 1,
+          "scale": 0.15,
+          "scale_hundredths": 15,
+          "student": "S3",
+          "violations": 0
+        }
+      ],
+      "status": "ok",
+      "void_items": []
+    },
+    "repository_fixture": {
+      "contract_version": 1,
+      "project": "assessment-score-equating",
+      "rounding": "HALF_UP@0.01",
+      "scores": [
+        {
+          "absent": 0,
+          "attempted": 1,
+          "form": "F1",
+          "raw": 1,
+          "scale": 10.0,
+          "scale_hundredths": 1000,
+          "student": "S1",
+          "violations": 0
+        },
+        {
+          "absent": 0,
+          "attempted": 1,
+          "form": "F2",
+          "raw": 0,
+          "scale": 0.0,
+          "scale_hundredths": 0,
+          "student": "S2",
+          "violations": 0
+        }
+      ],
+      "status": "ok",
+      "void_items": [
+        "Q2"
+      ]
+    },
+    "unknown_form_uses_default_scale": {
+      "contract_version": 1,
+      "project": "assessment-score-equating",
+      "rounding": "HALF_UP@0.01",
+      "scores": [
+        {
+          "absent": 0,
+          "attempted": 1,
+          "form": "NEW",
+          "raw": 1,
+          "scale": 10.0,
+          "scale_hundredths": 1000,
+          "student": "S1",
+          "violations": 0
+        }
+      ],
+      "status": "ok",
+      "void_items": []
+    },
+    "void_item_excluded": {
+      "contract_version": 1,
+      "project": "assessment-score-equating",
+      "rounding": "HALF_UP@0.01",
+      "scores": [
+        {
+          "absent": 0,
+          "attempted": 1,
+          "form": "F1",
+          "raw": 1,
+          "scale": 10.0,
+          "scale_hundredths": 1000,
+          "student": "S1",
+          "violations": 0
+        }
+      ],
+      "status": "ok",
+      "void_items": [
+        "Q2"
+      ]
+    }
+  }
+}

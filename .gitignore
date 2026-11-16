@@ -7,6 +7,10 @@ __pycache__/
 .coverage
 htmlcov/
 
+# Release tooling output: immutable builds, logs and the live release pointer.
+/dist/
+/release/
+
 # Environment files and local configuration
 .env
 .env.*

@@ -1,5 +1,21 @@
 [project]
 name = "assessment-score-equating"
 version = "0.1.0"
+description = "Score multiple exam forms with void-item and revision-aware scale rules."
+readme = "README.md"
 requires-python = ">=3.9"
 dependencies = []
+
+[build-system]
+requires = []
+build-backend = "releasekit.backend"
+backend-path = ["tools"]
+
+[tool.releasekit]
+# Both interpreters must resolve to distinct binaries; verification refuses to
+# run the "two runtime" matrix with fewer.
+supported-pythons = ["python3.11", "python3.12"]
+packages = ["assessment_score_equating"]
+# Fixtures are shipped inside the wheel under <package>/data/ so the CLI's
+# default input works offline from an extracted artifact.
+package-fixtures = ["fixtures/input.json"]

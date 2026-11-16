@@ -1,0 +1,19 @@
+{
+  "description": "Malformed inputs that must raise ValueError with a stable message on every interpreter. Ordering of checks is part of the contract.",
+  "cases": [
+    {"name": "not_an_object", "payload": []},
+    {"name": "responses_not_list", "payload": {"responses": {}}},
+    {"name": "response_not_object", "payload": {"responses": ["x"]}},
+    {"name": "missing_student", "payload": {"responses": [{"form": "F1", "item": "Q1", "answer": "A"}]}},
+    {"name": "empty_item", "payload": {"responses": [{"student": "S1", "form": "F1", "item": "", "answer": "A"}]}},
+    {"name": "missing_answer", "payload": {"responses": [{"student": "S1", "form": "F1", "item": "Q1"}]}},
+    {"name": "answer_not_string", "payload": {"responses": [{"student": "S1", "form": "F1", "item": "Q1", "answer": 1}]}},
+    {"name": "bad_status", "payload": {"responses": [{"student": "S1", "form": "F1", "item": "Q1", "answer": "A", "status": "late"}]}},
+    {"name": "keys_not_object", "payload": {"responses": [], "keys": []}},
+    {"name": "void_items_not_list", "payload": {"responses": [], "void_items": "Q1"}},
+    {"name": "void_item_not_string", "payload": {"responses": [], "void_items": [1]}},
+    {"name": "scale_not_object", "payload": {"responses": [], "scale": 10}},
+    {"name": "scale_not_number", "payload": {"responses": [], "scale": {"F1": "10"}}},
+    {"name": "scale_bool", "payload": {"responses": [], "scale": {"F1": true}}}
+  ]
+}

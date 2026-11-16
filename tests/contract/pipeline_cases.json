@@ -1,0 +1,102 @@
+{
+  "description": "Pinned deterministic scoring cases. Used by verify_release.py and tests/test_contract_cases.py. Every case must produce identical output on every supported interpreter and from any working directory.",
+  "cases": [
+    {
+      "name": "repository_fixture",
+      "fixture": "fixtures/input.json"
+    },
+    {
+      "name": "empty_input",
+      "payload": {
+        "responses": []
+      }
+    },
+    {
+      "name": "empty_payload",
+      "payload": {}
+    },
+    {
+      "name": "void_item_excluded",
+      "payload": {
+        "responses": [
+          {"student": "S1", "form": "F1", "item": "Q1", "answer": "A"},
+          {"student": "S1", "form": "F1", "item": "Q2", "answer": "B"}
+        ],
+        "keys": {"Q1": "A", "Q2": "Z"},
+        "void_items": ["Q2"],
+        "scale": {"F1": 10}
+      }
+    },
+    {
+      "name": "all_items_void",
+      "payload": {
+        "responses": [
+          {"student": "S1", "form": "F1", "item": "Q1", "answer": "A"}
+        ],
+        "keys": {"Q1": "A"},
+        "void_items": ["Q1", "Q9"],
+        "scale": {"F1": 10}
+      }
+    },
+    {
+      "name": "absent_and_violation",
+      "payload": {
+        "responses": [
+          {"student": "S1", "form": "F1", "item": "Q1", "answer": "A"},
+          {"student": "S1", "form": "F1", "item": "Q2", "answer": "B", "status": "absent"},
+          {"student": "S1", "form": "F1", "item": "Q3", "answer": "C", "status": "violation"},
+          {"student": "S1", "form": "F1", "item": "Q4", "answer": "D"}
+        ],
+        "keys": {"Q1": "A", "Q2": "B", "Q3": "C", "Q4": "D"},
+        "scale": {"F1": 10}
+      }
+    },
+    {
+      "name": "half_up_rounding",
+      "description": "1 * 0.145 = 0.145 is an exact tie: HALF_UP must give 0.15, HALF_EVEN 0.14 and binary float round() 0.14. Pins the rounding rule, not just its neighbourhood.",
+      "payload": {
+        "responses": [
+          {"student": "S1", "form": "F1", "item": "Q1", "answer": "A"},
+          {"student": "S2", "form": "F1", "item": "Q1", "answer": "B"},
+          {"student": "S3", "form": "F1", "item": "Q1", "answer": "A"}
+        ],
+        "keys": {"Q1": "A"},
+        "scale": {"F1": 0.145}
+      }
+    },
+    {
+      "name": "finite_scale_precision",
+      "payload": {
+        "responses": [
+          {"student": "S1", "form": "F1", "item": "Q1", "answer": "A"},
+          {"student": "S1", "form": "F1", "item": "Q2", "answer": "B"},
+          {"student": "S1", "form": "F1", "item": "Q3", "answer": "C"}
+        ],
+        "keys": {"Q1": "A", "Q2": "B", "Q3": "C"},
+        "scale": {"F1": 1.005}
+      }
+    },
+    {
+      "name": "default_scale_and_ordering",
+      "payload": {
+        "responses": [
+          {"student": "S2", "form": "F9", "item": "Q2", "answer": "B"},
+          {"student": "S1", "form": "F1", "item": "Q1", "answer": "A"},
+          {"student": "S1", "form": "F10", "item": "Q1", "answer": "A"},
+          {"student": "S1", "form": "F2", "item": "Q1", "answer": "A"}
+        ],
+        "keys": {"Q1": "A", "Q2": "B"}
+      }
+    },
+    {
+      "name": "unknown_form_uses_default_scale",
+      "payload": {
+        "responses": [
+          {"student": "S1", "form": "NEW", "item": "Q1", "answer": "A"}
+        ],
+        "keys": {"Q1": "A"},
+        "scale": {"OLD": 25}
+      }
+    }
+  ]
+}
