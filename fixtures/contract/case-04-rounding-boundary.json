@@ -1,0 +1,30 @@
+{
+  "responses": [
+    {
+      "student": "S1",
+      "form": "FA",
+      "item": "Q1",
+      "answer": "A"
+    },
+    {
+      "student": "S2",
+      "form": "FB",
+      "item": "Q1",
+      "answer": "A"
+    },
+    {
+      "student": "S3",
+      "form": "FC",
+      "item": "Q1",
+      "answer": "A"
+    }
+  ],
+  "keys": {
+    "Q1": "A"
+  },
+  "scale": {
+    "FA": 1.125,
+    "FB": 2.675,
+    "FC": 1.005
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "responses": [
+    {
+      "student": "S1",
+      "form": "F1",
+      "item": "Q1",
+      "answer": "A"
+    },
+    {
+      "student": "S2",
+      "form": "F1",
+      "item": "Q2",
+      "answer": "B"
+    }
+  ],
+  "keys": {
+    "Q1": "A",
+    "Q2": "B"
+  },
+  "void_items": [
+    "Q2"
+  ],
+  "scale": {
+    "F1": 10
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "project": "assessment-score-equating",
+  "scores": [
+    {
+      "attempted": 1,
+      "form": "F1",
+      "raw": 1,
+      "scale": 10,
+      "student": "S1"
+    },
+    {
+      "attempted": 1,
+      "form": "F1",
+      "raw": 0,
+      "scale": 0,
+      "student": "S2"
+    }
+  ],
+  "status": "ok",
+  "void_items": []
+}

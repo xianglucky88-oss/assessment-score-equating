@@ -19,3 +19,14 @@ PYTHONPATH=src python -m unittest discover -s tests -v
 ```
 
 The fixture is local and deterministic; no network or credentials are required.
+
+## Data contract and maintenance assets
+
+The score data contract, change-review assets, and contract example snapshots
+live outside this README:
+
+- `docs/README.md`: index of the contract and maintenance package.
+- `docs/contract/`: rules catalog, compatibility matrix, ambiguity cases.
+- `docs/maintenance/`: review checklist, change record template, pre-release checks.
+- `fixtures/contract/`: minimal contract example inputs and generated snapshots.
+- `tools/regen_contract_snapshots.py`: regenerates or checks those snapshots.
